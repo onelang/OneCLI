@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "es2017",
+        "module": "umd",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "lib",
+        "experimentalDecorators": true
+    },
+    "include": ["src/**/*", "lib/**/*"],
+}
