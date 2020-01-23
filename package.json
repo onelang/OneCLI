@@ -1,9 +1,12 @@
 {
   "name": "onecli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "CLI interface for OneLang transpiler framework",
   "main": "lib/index.js",
+  "license": "MIT",
   "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
@@ -11,10 +14,11 @@
     "email": "koczkatamas@gmail.com",
     "url": "https://kt.gy/"
   },
-  "license": "MIT",
   "dependencies": {
-    "yargs": "^15.1.0",
-    "onelang": "^1.0.0"
+    "@types/node": "^8.10.59",
+    "onelang": "^1.0.0",
+    "typescript": "^2.9.2",
+    "yargs": "^15.1.0"
   },
   "devDependencies": {
     "@types/yargs": "^15.0.1"
