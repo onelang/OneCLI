@@ -1,9 +1,10 @@
 {
-  "name": "onecli",
-  "version": "0.0.1",
+  "name": "onelang-cli",
+  "version": "0.0.2",
   "description": "CLI interface for OneLang transpiler framework",
   "main": "lib/index.js",
   "license": "MIT",
+  "files": ["bin", "lib"],
   "scripts": {
     "prepare": "npm run build",
     "build": "tsc",
