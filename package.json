@@ -1,6 +1,6 @@
 {
   "name": "onelang-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CLI interface for OneLang transpiler framework",
   "main": "lib/index.js",
   "license": "MIT",
