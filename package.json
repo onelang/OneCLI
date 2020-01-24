@@ -4,24 +4,42 @@
   "description": "CLI interface for OneLang transpiler framework",
   "main": "lib/index.js",
   "license": "MIT",
-  "files": ["bin", "lib"],
-  "scripts": {
-    "prepare": "npm run build",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": {
     "name": "Koczka Tamás",
     "email": "koczkatamas@gmail.com",
     "url": "https://kt.gy/"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onelang/OneCLI.git"
+  },
+  "keywords": [
+    "onelang",
+    "cli",
+    "transpiler",
+    "source-to-source",
+    "programming-language"
+  ],
+  "bugs": {
+    "url": "https://github.com/onelang/OneLang/issues"
+  },
+  "homepage": "https://onelang.io",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
-    "@types/node": "^8.10.59",
-    "onelang": "^1.0.0",
-    "typescript": "^2.9.2",
-    "yargs": "^15.1.0"
+    "yargs": "^15.1.0",
+    "onelang": "^0.0.2"
   },
   "devDependencies": {
+    "typescript": "^3.1.1",
+    "@types/node": "^8.10.59",
     "@types/yargs": "^15.0.1"
   }
 }
