@@ -22,7 +22,7 @@ yargs.command('transpile <inputFile>', 'compile one standalone file to an other 
             choices: ['auto', ...one.getCapabilities().sourceLanguages]
         }
     }),
-    args => {
+    async args => {
         const inputFile = <string>args.inputFile;
         let sourceLang = args.from;
         if (sourceLang === 'auto') {
@@ -34,9 +34,28 @@ yargs.command('transpile <inputFile>', 'compile one standalone file to an other 
         }
 
         const sourceCode = fs.readFileSync(inputFile, 'utf-8');
-        const compiledCode = one.transpile(sourceCode, sourceLang, args.to);
+        const compiledCode = await one.transpile(sourceCode, sourceLang, args.to);
         console.log(compiledCode);
-    })
-    .demandCommand().recommendCommands().strict()
-    .wrap(Math.min(yargs.terminalWidth(), 140)).help()
+    });
+
+//yargs.command('error', 'SHOW ERROR', {}, async args => { console.log("HELLO"); throw new Error("ERROR"); });
+
+let helpShown = false;
+yargs.fail((msg, err) => {
+    if (err) {
+        console.error(err);
+        throw err;
+    } else {
+        if (!helpShown) {
+            yargs.showHelp();
+            console.error();
+            helpShown = true;
+        }
+        console.error(msg);
+    }
+});
+
+yargs.demandCommand().recommendCommands().strict()
+    .wrap(Math.min(yargs.terminalWidth(), 140))
+    .showHelpOnFail(true).help()
     .argv
