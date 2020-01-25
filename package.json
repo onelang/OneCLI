@@ -1,6 +1,6 @@
 {
   "name": "onelang-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CLI interface for OneLang transpiler framework",
   "main": "lib/index.js",
   "bin": { "one": "./bin/one" },
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "yargs": "^15.1.0",
-    "onelang": "^0.0.2"
+    "onelang": "^0.0.3"
   },
   "devDependencies": {
     "typescript": "^3.1.1",
