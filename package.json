@@ -3,7 +3,9 @@
   "version": "0.0.6",
   "description": "CLI interface for OneLang transpiler framework",
   "main": "lib/index.js",
-  "bin": { "one": "./bin/one" },
+  "bin": {
+    "one": "./bin/one"
+  },
   "license": "MIT",
   "author": {
     "name": "Koczka Tamás",
@@ -39,8 +41,8 @@
     "onelang": "^0.0.3"
   },
   "devDependencies": {
-    "typescript": "^3.1.1",
     "@types/node": "^8.10.59",
-    "@types/yargs": "^15.0.1"
+    "@types/yargs": "^15.0.1",
+    "typescript": "^3.7.5"
   }
 }
