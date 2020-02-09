@@ -1,5 +1,5 @@
+import { OneLang } from 'onelang';
 import * as yargs from 'yargs';
-import * as one from 'onelang';
 import * as fs from 'fs';
 
 function fail(msg) {
@@ -13,13 +13,13 @@ yargs.command('transpile <inputFile>', 'compile one standalone file to an other 
             alias: 't',
             describe: 'target language to transpile the input file to',
             demand: true,
-            choices: one.getCapabilities().targetLanguages 
+            choices: OneLang.getCapabilities().targetLanguages 
         },
         from: { 
             alias: 'f',
             describe: 'source language, the input file is written in this language',
             default: 'auto',
-            choices: ['auto', ...one.getCapabilities().sourceLanguages]
+            choices: ['auto', ...OneLang.getCapabilities().sourceLanguages]
         }
     }),
     async args => {
@@ -34,7 +34,7 @@ yargs.command('transpile <inputFile>', 'compile one standalone file to an other 
         }
 
         const sourceCode = fs.readFileSync(inputFile, 'utf-8');
-        const compiledCode = await one.transpile(sourceCode, sourceLang, args.to);
+        const compiledCode = await OneLang.transpile(sourceCode, sourceLang, args.to);
         console.log(compiledCode);
     });
 
